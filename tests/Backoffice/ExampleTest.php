@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Backoffice;
 
 use PHPUnit\Framework\TestCase;
 
