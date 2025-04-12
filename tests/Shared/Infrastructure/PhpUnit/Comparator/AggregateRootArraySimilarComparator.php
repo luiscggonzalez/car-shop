@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Tests\Shared\Infrastructure\PhpUnit\Comparator;
 
-use App\Shared\Domain\Aggregate\AggregateRoot;
-use Tests\Shared\Domain\TestUtils;
+use CarShop\Shared\Domain\Aggregate\AggregateRoot;
 use PHPUnit\Util\Exporter;
 use SebastianBergmann\Comparator\Comparator;
 use SebastianBergmann\Comparator\ComparisonFailure;
+use Tests\Shared\Domain\TestUtils;
 use function Lambdish\Phunctional\all;
 use function Lambdish\Phunctional\any;
 use function Lambdish\Phunctional\instance_of;
@@ -28,7 +28,7 @@ final class AggregateRootArraySimilarComparator extends Comparator
     }
 
     /**
-     * @param array<int, AggregateRoot> $expected
+     * @param array<int, \Aggregate\AggregateRoot> $expected
      * @param array<int, AggregateRoot> $actual
      * @param float $delta
      * @param bool $canonicalize
@@ -49,7 +49,7 @@ final class AggregateRootArraySimilarComparator extends Comparator
 
     /**
      * @param array<int, AggregateRoot> $expectedArray
-     * @param array<int, AggregateRoot> $actualArray
+     * @param array<int, \Aggregate\AggregateRoot> $actualArray
      */
     private function contains(array $expectedArray, array $actualArray): bool
     {

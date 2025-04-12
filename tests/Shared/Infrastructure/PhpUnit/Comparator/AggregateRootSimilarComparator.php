@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Shared\Infrastructure\PhpUnit\Comparator;
 
-use App\Shared\Domain\Aggregate\AggregateRoot;
+use CarShop\Shared\Domain\Aggregate\AggregateRoot;
 use PHPUnit\Util\Exporter;
 use ReflectionException;
 use ReflectionObject;
