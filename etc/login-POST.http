@@ -1,0 +1,10 @@
+POST http://localhost/api/login
+accept: application/json
+content-type: application/json
+
+{
+    "email": "{{email}}",
+    "password": "{{password}}"
+}
+
+###
