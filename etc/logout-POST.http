@@ -1,0 +1,5 @@
+POST http://localhost/api/logout
+accept: application/json
+Authorization: Bearer {{token}}
+
+###
