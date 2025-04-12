@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Shared\Domain\Bus\Event;
+namespace CarShop\Shared\Domain\Bus\Event;
 
 use DateTimeImmutable;
 
@@ -13,8 +13,8 @@ abstract class DomainEvent
 
     public function __construct(
         private readonly string $aggregateId,
-        string $eventId = null,
-        string $occurredOn = null
+        ?string $eventId = null,
+        ?string $occurredOn = null
     ) {
         $this->eventId = $eventId ?: uuid_create();
         $this->occurredOn = $occurredOn ?: (new DateTimeImmutable())->format('Y-m-d H:i:s');

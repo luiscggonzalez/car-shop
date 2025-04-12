@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Shared\Infrastructure\PhpUnit;
 
-use App\Shared\Domain\Bus\Event\DomainEvent;
-use App\Shared\Domain\Bus\Event\EventBus;
+use CarShop\Shared\Domain\Bus\Event\DomainEvent;
+use CarShop\Shared\Domain\Bus\Event\EventBus;
 use Mockery;
 use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;
@@ -14,7 +14,7 @@ use Tests\Shared\Infrastructure\Mockery\MatcherIsSimilar;
 
 abstract class UnitTestCase extends TestCase
 {
-    /** @var (EventBus&MockInterface)|null */
+    /** @var (\CarShop\Shared\Domain\Bus\Event\EventBus&MockInterface)|null */
     private $eventBus = null;
 
     /**
@@ -46,7 +46,7 @@ abstract class UnitTestCase extends TestCase
     }
 
     /**
-     * @return EventBus&MockInterface
+     * @return \Bus\Event\EventBus&MockInterface
      */
     protected function eventBus(): EventBus&MockInterface
     {

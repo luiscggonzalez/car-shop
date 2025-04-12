@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Tests\Shared\Infrastructure\PhpUnit\Comparator;
 
-use App\Shared\Domain\Bus\Event\DomainEvent;
+use CarShop\Shared\Domain\Bus\Event\DomainEvent;
+use PHPUnit\Util\Exporter;
 use ReflectionException;
 use ReflectionObject;
-use Tests\Shared\Domain\TestUtils;
-use PHPUnit\Util\Exporter;
 use SebastianBergmann\Comparator\Comparator;
 use SebastianBergmann\Comparator\ComparisonFailure;
+use Tests\Shared\Domain\TestUtils;
 
 final class DomainEventSimilarComparator extends Comparator
 {
@@ -38,8 +38,8 @@ final class DomainEventSimilarComparator extends Comparator
     public function assertEquals($expected, $actual, $delta = 0.0, $canonicalize = false, $ignoreCase = false): void
     {
 
-        /** @var DomainEvent $expected */
-        /** @var DomainEvent $actual */
+        /** @var \Bus\Event\DomainEvent $expected */
+        /** @var \Bus\Event\DomainEvent $actual */
         if (!$this->areSimilar($expected, $actual)) {
             throw new ComparisonFailure(
                 $expected,

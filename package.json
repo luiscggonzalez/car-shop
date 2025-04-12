@@ -1,23 +1,20 @@
 {
-    "name": "car-shop",
-    "private": true,
-    "scripts": {
-        "build": "turbo run build",
-        "dev": "turbo run dev",
-        "lint": "turbo run lint",
-        "lint:fix": "turbo run lint:fix",
-        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-        "check-types": "turbo run check-types"
-    },
-    "devDependencies": {
-        "turbo": "^2.4.2",
-        "typescript": "5.7.3"
-    },
-    "engines": {
-        "node": ">=18"
-    },
-    "packageManager": "npm@10.9.2",
-    "workspaces": [
-        "apps/*"
-    ]
+  "name": "car-shop",
+  "version": "1.0.0",
+  "description": "Car Shop monorepo",
+  "private": true,
+  "scripts": {
+    "dev:backoffice": "npm run dev --prefix apps/backoffice",
+    "dev:frontend": "npm run dev --prefix apps/frontend",
+    "dev": "npm run dev:backoffice",
+    "build:backoffice": "npm run build --prefix apps/backoffice",
+    "build:frontend": "npm run build --prefix apps/frontend",
+    "build": "npm run build:backoffice && npm run build:frontend",
+    "lint:backoffice": "npm run lint --prefix apps/backoffice",
+    "lint:frontend": "npm run lint --prefix apps/frontend",
+    "lint": "npm run lint:backoffice && npm run lint:frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

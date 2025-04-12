@@ -1,7 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-// @ts-ignore
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute('/')({
   component: Home,
 })
 

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Tests\Shared\Infrastructure\PhpUnit\Comparator;
 
-use App\Shared\Domain\Bus\Event\DomainEvent;
-use Tests\Shared\Domain\TestUtils;
+use CarShop\Shared\Domain\Bus\Event\DomainEvent;
 use PHPUnit\Util\Exporter;
 use SebastianBergmann\Comparator\Comparator;
 use SebastianBergmann\Comparator\ComparisonFailure;
+use Tests\Shared\Domain\TestUtils;
 use function Lambdish\Phunctional\all;
 use function Lambdish\Phunctional\any;
 use function Lambdish\Phunctional\instance_of;
@@ -29,7 +29,7 @@ final class DomainEventArraySimilarComparator extends Comparator
 
     /**
      * @param array<int, DomainEvent> $expected
-     * @param array<int, DomainEvent> $actual
+     * @param array<int, \Bus\Event\DomainEvent> $actual
      * @param float $delta
      * @param bool $canonicalize
      * @param bool $ignoreCase
@@ -49,7 +49,7 @@ final class DomainEventArraySimilarComparator extends Comparator
 
     /**
      * @param array<int, DomainEvent> $expectedArray
-     * @param array<int, DomainEvent> $actualArray
+     * @param array<int, \Bus\Event\DomainEvent> $actualArray
      */
     private function contains(array $expectedArray, array $actualArray): bool
     {
