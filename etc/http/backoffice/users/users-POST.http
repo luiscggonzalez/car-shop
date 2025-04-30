@@ -1,0 +1,12 @@
+POST http://localhost/api/backoffice/users
+accept: application/json
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "{{$random.name.fullName}}",
+    "email": "{{$random.email}}",
+    "password": "{{$random.internet.password}}"
+}
+
+###
